@@ -46,4 +46,3 @@ if __name__ == "__main__":
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, responder_livro))
     print("🤖 Bot rodando...")
     app.run_polling(close_loop=False)
-    
