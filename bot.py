@@ -32,7 +32,7 @@ async def responder_livro(update: Update, context: ContextTypes.DEFAULT_TYPE):
     nome_livro = update.message.text
     await update.message.reply_text(f"⏳ Processando '{nome_livro}'...")
     try:
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        model = genai.GenerativeModel("gemini-3.8-flash")
         resposta = model.generate_content(f"Gere um guia completo e resumo detalhado do livro '{nome_livro}'.")
         caminho = gerar_pdf(nome_livro, resposta.text)
         with open(caminho, "rb") as f_pdf:
